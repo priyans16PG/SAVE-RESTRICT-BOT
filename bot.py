@@ -113,8 +113,11 @@ class Bot(Client):
         )
 
         try:
-            await self.send_message(LOG_CHANNEL, startup_text)
-            logger.info("Startup log sent.")
+            if LOG_CHANNEL and str(LOG_CHANNEL).strip() and LOG_CHANNEL != "0":
+                await self.send_message(LOG_CHANNEL, startup_text)
+                logger.info("Startup log sent.")
+            else:
+                logger.warning("LOG_CHANNEL not set or empty — skipping startup log.")
         except Exception as e:
             logger.error(f"Failed to send startup log: {e}")
 
