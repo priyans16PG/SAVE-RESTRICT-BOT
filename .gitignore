@@ -1,0 +1,23 @@
+venv/
+.env
+__pycache__/
+*.pyc
+*.pyo
+dist/
+build/
+*.egg-info/
+
+# Runtime/session files
+*.session
+*.session-journal
+*.session-shm
+*.session-wal
+logs.txt
+
+# Local downloads/cache
+downloads/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/

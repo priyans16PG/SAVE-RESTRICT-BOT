@@ -34,11 +34,11 @@ LOGO = r"""
 class Bot(Client):
     def __init__(self):
         super().__init__(
-            name="cantarella_Login_Bot",
+            name="lockedsaver_Login_Bot",
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
-            plugins=dict(root="cantarella"),
+            plugins=dict(root="lockedsaver"),
             workers=10, 
             sleep_threshold=15,
             max_concurrent_transmissions=5,
@@ -74,6 +74,22 @@ class Bot(Client):
                 await asyncio.sleep(wait_time)
             except Exception as e:
                 logger.error(f"Critical Startup Error: {e}")
+                # Recover cleanly from partial starts to avoid "Client is already connected" loops.
+                try:
+                    if self.is_connected:
+                        await super().stop()
+                except Exception:
+                    pass
+
+                # If sqlite session was left in a bad state, clear journal files and retry.
+                if "database is locked" in str(e).lower():
+                    for suffix in [".session-journal", ".session-shm", ".session-wal"]:
+                        session_sidecar = f"{self.name}{suffix}"
+                        try:
+                            if os.path.exists(session_sidecar):
+                                os.remove(session_sidecar)
+                        except Exception:
+                            pass
                 await asyncio.sleep(15)
 
         me = await self.get_me()
@@ -93,7 +109,7 @@ class Bot(Client):
             f"<b>Bot:</b> @{me.username}\n"
             f"<b>Users:</b> <code>{user_count} / 200</code>\n"
             f"<b>Time:</b> <code>{now.strftime('%I:%M %p')} IST</code>\n\n"
-            f"<b>Developed by @cantarellabots</b>"
+            f"<b>Developed by @priyans17</b>"
         )
 
         try:

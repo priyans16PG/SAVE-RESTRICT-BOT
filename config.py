@@ -1,10 +1,11 @@
 """
 Save Restricted Content Bot Configuration
 
-Developed by: LastPerson07Xcantarella
-Telegram: @cantarellabots X @THEUPDATEDGUYS
+Rebranded: lockedsaver
+Developer: priyans17
+Telegram: @lockedsaver_bot
 
-Please retain this credit if you use or modify this project.
+You may keep original credits in LICENSE as required by the MIT license.
 """
 
 import os

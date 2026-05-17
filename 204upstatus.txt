@@ -1,0 +1,8 @@
+<b>⚡ Processing Task...</b>
+<blockquote>
+<b>Progress: ██████               32.4%</b>
+<b>🚀 Speed:</b> <code>452.12 KB/s</code>
+<b>💾 Size:</b> <code>30.5 MB of 94.13 MB</code>
+<b>⏱ Elapsed:</b> <code>1m, 9s</code>
+<b>⏳ ETA:</b> <code>2m, 24s</code>
+</blockquote>

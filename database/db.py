@@ -15,7 +15,8 @@ class Database:
             name = name,
             session = None,
             daily_usage = 0, # Added: Track saves
-            limit_reset_time = None # Added: Track 24h reset time
+            limit_reset_time = None, # Added: Track 24h reset time
+            total_saves = 0
         )
    
     async def add_user(self, id, name):
@@ -56,9 +57,9 @@ class Database:
         return user.get('thumbnail', None)
     async def del_thumbnail(self, id):
         await self.col.update_one({'id': int(id)}, {'$unset': {'thumbnail': ""}})
-    # cantarella / Modified by You
-    # Don't Remove Credit
-    # Telegram Channel @cantarellabots
+    # lockedsaver (modified)
+    # Rebranded by: priyans17
+    # Support: @lockedsaver_bot
     # Premium Support
     async def add_premium(self, id, expiry_date):
         # When user buys premium, we also reset their limits just in case
@@ -157,6 +158,12 @@ class Database:
         If it's the first save of the cycle, sets the 24h timer.
         """
         user = await self.col.find_one({'id': int(id)})
+
+        # Track lifetime saves for all users (free + premium).
+        await self.col.update_one(
+            {'id': int(id)},
+            {'$inc': {'total_saves': 1}}
+        )
        
         # If premium, do nothing or track stats if you want (currently strictly for limit logic)
         if user.get('is_premium'):

@@ -1,14 +1,3 @@
-# cantarella
-# Don't Remove Credit
-# Telegram Channel @cantarellabots
-
-
-# cantarella
-# Don't Remove Credit
-# Telegram Channel @cantarellabots
-
-
-
-# cantarella
-# Don't Remove Credit
-# Telegram Channel @cantarellabots
+# lockedsaver package
+# Rebranded to lockedsaver
+# Support: @lockedsaver_bot

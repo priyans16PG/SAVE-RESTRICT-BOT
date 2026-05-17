@@ -1,8 +1,8 @@
 """
 Logging Configuration
 
-Developed by: LastPerson07 × cantarella
-Telegram: @cantarellabots | @THEUPDATEDGUYS
+Rebranded by: priyans17
+Telegram: @lockedsaver_bot
 """
 
 import logging

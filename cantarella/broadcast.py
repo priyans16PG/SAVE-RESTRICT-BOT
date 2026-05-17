@@ -166,9 +166,9 @@ async def users_count(bot: Client, message: Message):
 
 
 # Credits
-# Developer Telegram: @cantarellabots
-# Update channel: @cantarellabots
+# Developer Telegram: @priyans17
+# Update channel: @lockedsaver_bot
 
-# cantarella
-# Don't Remove Credit
-# Telegram Channel @cantarellabots
+# lockedsaver
+# Rebranded by: priyans17
+# Telegram Channel @lockedsaver_bot

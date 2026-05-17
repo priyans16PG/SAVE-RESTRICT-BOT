@@ -1,4 +1,4 @@
-# 🚀 Save Restricted Content Bot (Advanced)
+# 🚀 lockedsaver - restricted saver free
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&style=for-the-badge">
@@ -8,12 +8,12 @@
 </p>
 
 <p align="center">
-<b>A cleaner and improved version of the Save Restricted Content Bot with a better structure, smoother workflow, and practical features for real usage.</b>
+<b>lockedsaver — your personal restricted content saver with premium features.</b>
 </p>
 
 <p align="center">
-  <a href="https://github.com/abhinai2244/SAVE-RESTRICT-BOT">
-    <img src="https://img.shields.io/badge/View-Original%20Repository-black?style=for-the-badge&logo=github">
+  <a href="https://github.com/your_username/lockedsaver">
+    <img src="https://img.shields.io/badge/View-Repository-black?style=for-the-badge&logo=github">
   </a>
 </p>
 
@@ -194,8 +194,8 @@ docker run -d --env-file .env save-restricted-bot
 # 🤝 Contributors
 
 <p align="center">
-  <a href="https://t.me/about_zani">
-    <img src="https://img.shields.io/badge/Abhi-Telegram-blue?style=for-the-badge&logo=telegram">
+  <a href="https://t.me/priyans17">
+    <img src="https://img.shields.io/badge/priyans17-Telegram-blue?style=for-the-badge&logo=telegram">
   </a>
   &nbsp;
   <a href="https://github.com/LastPerson07/">
@@ -208,11 +208,11 @@ docker run -d --env-file .env save-restricted-bot
 # 📞 Support
 
 <p align="center">
-  <a href="https://t.me/cantarellabots">
-    <img src="https://img.shields.io/badge/cantarella-Official%20Channel-blue?style=for-the-badge&logo=telegram">
+  <a href="https://t.me/lockedsaver_bot">
+    <img src="https://img.shields.io/badge/lockedsaver-Official%20Channel-blue?style=for-the-badge&logo=telegram">
   </a>
   <br><br>
-  <a href="https://t.me/THEUPDATEDGUYS">
+  <a href="https://t.me/priyans17">
     <img src="https://img.shields.io/badge/Updates-Channel-blue?style=for-the-badge&logo=telegram">
   </a>
 </p>

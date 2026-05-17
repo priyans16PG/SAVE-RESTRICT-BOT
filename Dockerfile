@@ -1,11 +1,7 @@
 # ========================================================
-# cantarella
-# Don't Remove Credit 🥺
-# Telegram Channel @cantarellabots
-#
-# Maintained & Updated by:
-# Dhanpal Sharma
-# GitHub: https://github.com/LastPerson07
+# lockedsaver
+# Rebranded by: priyans17
+# Telegram Channel @lockedsaver_bot
 # ========================================================
 
 FROM python:3.10.13-slim-bullseye
@@ -35,10 +31,7 @@ COPY . .
 CMD ["python3", "bot.py"]
 
 # ========================================================
-# cantarella
-# Don't Remove Credit
-# Telegram Channel @cantarellabots
-#
-# Updated & Managed by:
-# Dhanpal Sharma | https://github.com/LastPerson07
+# lockedsaver
+# Rebranded by: priyans17
+# Telegram Channel @lockedsaver_bot
 # ========================================================

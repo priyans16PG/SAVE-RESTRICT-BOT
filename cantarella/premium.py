@@ -32,6 +32,7 @@ async def my_plan(client: Client, message: Message):
     is_premium = user_data.get('is_premium', False)
     expiry = user_data.get('premium_expiry')
     daily_usage = user_data.get('daily_usage', 0)
+    limit_reset_time = user_data.get('limit_reset_time')
     # Note: total_saves needs to be tracked in your traffic logic to show up here
     total_saves = user_data.get('total_saves', 0) 
 
@@ -66,10 +67,25 @@ async def my_plan(client: Client, message: Message):
         # Free Logic
         daily_limit = 10
         tokens_left = max(0, daily_limit - daily_usage)
+        reset_text = "<code>Not started</code>"
+        if limit_reset_time:
+            try:
+                now = datetime.now()
+                if isinstance(limit_reset_time, datetime):
+                    delta = limit_reset_time - now
+                else:
+                    delta = datetime.fromisoformat(str(limit_reset_time)) - now
+                seconds_left = max(0, int(delta.total_seconds()))
+                hours = seconds_left // 3600
+                minutes = (seconds_left % 3600) // 60
+                reset_text = f"<code>{hours}h {minutes}m</code>"
+            except Exception:
+                reset_text = "<code>Unknown</code>"
         
         plan_text = (
             f"<b>👤 Plan: Free Tier</b>\n\n"
             f"<b>🎫 Daily Tokens:</b> <code>{tokens_left} / {daily_limit}</code>\n"
+            f"<b>⏳ Daily Reset In:</b> {reset_text}\n"
             f"<b>📦 File Size Limit:</b> <code>2 GB</code>\n"
             f"<b>📊 Total Lifetime Saves:</b> <code>{total_saves}</code>\n\n"
             "<i>Upgrade to Premium for unlimited access! 🚀</i>"
@@ -77,7 +93,7 @@ async def my_plan(client: Client, message: Message):
 
     buttons = InlineKeyboardMarkup([
         [InlineKeyboardButton("💎 View Premium Plans", callback_data="premium_plans_btn")],
-        [InlineKeyboardButton("📞 Contact Admin", url="https://t.me/about_zani")]
+        [InlineKeyboardButton("📞 Contact Admin", url="https://t.me/priyans17")]
     ])
 
     await message.reply_text(
@@ -107,13 +123,13 @@ async def show_premium_plans(message_or_query):
         "• 👑 <b>Premium</b> Badge\n"
         "</blockquote>\n\n"
         "<b>💲 Pricing:</b>\n"
-        "• <b>1 Month:</b> ₹50 / $1\n"
-        "• <b>Lifetime:</b> ₹200 / $4\n\n"
-        "<i>Tap the button below to buy instantly.</i>"
+        "• <b>One-time:</b> ₹100 for 200 files\n"
+        "• <b>1 Month:</b> ₹1000\n\n"
+        "<b>Contact to buy:</b> @priyans17"
     )
 
     buttons = InlineKeyboardMarkup([
-        [InlineKeyboardButton("💳 Buy Premium Now", url="https://t.me/DmOwner")],
+        [InlineKeyboardButton("📞 Contact To Buy", url="https://t.me/priyans17")],
         [InlineKeyboardButton("⬅️ Back to My Plan", callback_data="myplan_back_btn")]
     ])
 

@@ -1,6 +1,5 @@
-# cantarella
-# Don't Remove Credit
-# Telegram Channel @cantarellabots
+# lockedsaver admin handlers
+# Support: @lockedsaver_bot
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
@@ -28,9 +27,7 @@ async def unban(client: Client, message: Message):
         await message.reply_text(f"**User {user_id} Unbanned Successfully ✅**")
     except:
         await message.reply_text("Error unbanning user.")
-# cantarella
-# Don't Remove Credit
-# Telegram Channel @cantarellabots
+# lockedsaver admin handlers
 
 @Client.on_message(filters.command("set_dump") & filters.user(ADMINS))
 async def set_dump(client: Client, message: Message):

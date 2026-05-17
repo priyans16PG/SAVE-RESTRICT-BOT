@@ -1,5 +1,5 @@
-# Developed by: LastPerson07 × cantarella
-# Telegram: @cantarellabots | @THEUPDATEDGUYS
+# Developed by: priyans17
+# Telegram: @lockedsaver_bot
 import os
 import asyncio
 import random
@@ -22,7 +22,7 @@ logger = LOGGER(__name__)
 SUBSCRIPTION = os.environ.get('SUBSCRIPTION', 'https://graph.org/file/242b7f1b52743938d81f1.jpg')
 FREE_LIMIT_SIZE = 2 * 1024 * 1024 * 1024
 FREE_LIMIT_DAILY = 10
-UPI_ID = os.environ.get("UPI_ID", "your_upi@oksbi")
+UPI_ID = os.environ.get("UPI_ID", "priyans17@upi")
 QR_CODE = os.environ.get("QR_CODE", "https://graph.org/file/242b7f1b52743938d81f1.jpg")
 REACTIONS = [
     "👍", "❤️", "🔥", "🥰", "👏", "😁", "🤔", "🤯", "😱", "🤬",
@@ -36,16 +36,8 @@ REACTIONS = [
 ]
 
 
-dev_text = "👨‍💻 Mind Behind This Bot:\n• @DmOwner\n• @akaza7902"
-expected_dev_hash = "b9e63b7578bdec13f3cb3162fe5f5e93dccaba3bfd5c8ddacbb90ffdcdcce402"
-channels_text = "📢 Official Channels:\n• @ReX_update\n• @THEUPDATEDGUYS\n\nStay updated for new features!"
-expected_channels_hash = "e19212e571bd0f6626450dd790029d392c0748c554d4b386a0c0752f4148d37d"
-
-if (
-    hashlib.sha256(dev_text.encode('utf-8')).hexdigest() != expected_dev_hash or
-    hashlib.sha256(channels_text.encode('utf-8')).hexdigest() != expected_channels_hash
-):
-    raise Exception("Tampered developer info detected! Bot will not start. Fuck the code - crashing now.")
+dev_text = "👨‍💻 Mind Behind This Bot:\n• @priyans17"
+channels_text = "📢 Official Channels:\n• @lockedsaver_bot\n\nStay updated for new features!"
 
 class script(object):
    
@@ -79,8 +71,8 @@ class script(object):
 """
     ABOUT_TXT = """<b>ℹ️ About This Bot</b>
 <blockquote><b>╭────[ 🧩 Technical Stack ]────⍟</b>
-<b>├⍟ 🤖 Bot Name : <a href=http://t.me/THEUPDATEDGUYS_Bot>Save Content</a></b>
-<b>├⍟ 👨‍💻 Developer : <a href=https://t.me/DmOwner>Ⓜ️ark X cantarella</a></b>
+<b>├⍟ 🤖 Bot Name : <a href=http://t.me/lockedsaver_bot>@lockedsaver_bot</a></b>
+<b>├⍟ 👨‍💻 Developer : <a href=https://t.me/priyans17>priyans17</a></b>
 <b>├⍟ 📚 Library : <a href='https://docs.pyrogram.org/'>Pyrogram Async</a></b>
 <b>├⍟ 🐍 Language : <a href='https://www.python.org/'>Python 3.11+</a></b>
 <b>├⍟ 🗄 Database : <a href='https://www.mongodb.com/'>MongoDB Atlas Cluster</a></b>
@@ -91,19 +83,18 @@ class script(object):
 <b>Unlock Unlimited Access & Advanced Features!</b>
 <blockquote><b>✨ Key Benefits:</b>
 <b>♾️ Unlimited Daily Downloads</b>
-<b>📂 Support for 4GB+ File Sizes</b>
-<b>⚡ Instant Processing (Zero Delay)</b>
+<b>📂 Support for large file sizes</b>
+<b>⚡ Instant Processing</b>
 <b>🖼 Customizable Thumbnails</b>
 <b>📝 Personalized Captions</b>
-<b>🛂 24/7 Priority Support</b></blockquote>
+<b>🛂 Priority Support</b></blockquote>
 <blockquote><b>💳 Pricing Options:</b></blockquote>
-• <b>1 Month Plan:</b> ₹50 / $1 (Billed Monthly)
-• <b>3 Month Plan:</b> ₹120 / $2.5 (Save 20%)
-• <b>Lifetime Access:</b> ₹200 / $4 (One-Time Payment)
-<blockquote><b>👇 Secure Payment:</b></blockquote>
+• <b>One-time:</b> ₹100 — Get 200 files
+• <b>Monthly:</b> ₹1000 — 1 Month access
+
 <b>💸 UPI ID:</b> <code>{}</code>
-<b>📸 QR Code:</b> <a href='{}'>Scan to Pay</a>
-<i>After Payment: Send Screenshot to Admin for Instant Activation.</i>
+<blockquote><b>How to Purchase</b></blockquote>
+Contact to buy: DM @priyans17 with your payment proof and selected plan. No QR system.
 """
     PROGRESS_BAR = """\
 <b>⚡ Processing Task...</b>
@@ -115,7 +106,7 @@ class script(object):
 <b>⏳ ETA:</b> <code>{eta}</code>
 </blockquote>
 """
-    CAPTION = """<b><a href="https://t.me/THEUPDATEDGUYS"></a></b>\n\n<b>⚜️ Powered By : <a href="https://t.me/THEUPDATEDGUYS">THE UPDATED GUYS 😎</a></b>"""
+    CAPTION = """<b><a href=\"https://t.me/lockedsaver_bot\"></a></b>\n\n<b>⚜️ Powered By : <a href=\"https://t.me/priyans17\">priyans17</a></b>"""
     LIMIT_REACHED = """<b>🚫 Daily Limit Exceeded</b>
 <b>Your 10 free saves for today have been used.</b>
 <i>Quota resets automatically after 24 hours from first download.</i>
@@ -276,20 +267,25 @@ async def send_help(client: Client, message: Message):
 @Client.on_message(filters.command(["plan", "myplan", "premium"]))
 async def send_plan(client: Client, message: Message):
     buttons = [
-        [InlineKeyboardButton("📸 Send Payment Proof", url="https://t.me/DmOwner")],
+        [InlineKeyboardButton("📞 Contact To Buy", url="https://t.me/priyans17")],
         [InlineKeyboardButton("❌ Close Menu", callback_data="close_btn")]
     ]
     await client.send_photo(
         chat_id=message.chat.id,
         photo=SUBSCRIPTION,
-        caption=script.PREMIUM_TEXT.format(UPI_ID, QR_CODE),
+        caption=script.PREMIUM_TEXT.format(UPI_ID),
         reply_markup=InlineKeyboardMarkup(buttons),
         parse_mode=enums.ParseMode.HTML
     )
-@Client.on_message(filters.command(["cancel"]))
+@Client.on_message(filters.private & filters.command(["cancel", "stop", "abort"]), group=-1)
 async def send_cancel(client: Client, message: Message):
-    batch_temp.IS_BATCH[message.from_user.id] = True
-    await message.reply_text("❌ Batch Process Cancelled Successfully.")
+    user_id = message.from_user.id
+    was_processing = batch_temp.IS_BATCH.get(user_id) is False
+    batch_temp.IS_BATCH[user_id] = True
+    if was_processing:
+        await message.reply_text("❌ Current task cancelled successfully.")
+    else:
+        await message.reply_text("ℹ️ No active task right now.")
 async def settings_panel(client, callback_query):
     """
     Renders the Settings Menu with professional layout.
@@ -330,70 +326,78 @@ async def save(client: Client, message: Message):
        
         if batch_temp.IS_BATCH.get(message.from_user.id) == False:
             return await message.reply_text("<b>⚠️ A Task is Currently Processing.</b>\n<i>Please wait for completion or use /cancel to stop.</i>", parse_mode=enums.ParseMode.HTML)
-        datas = message.text.split("/")
-        temp = datas[-1].replace("?single", "").split("-")
-        fromID = int(temp[0].strip())
         try:
-            toID = int(temp[1].strip())
-        except:
-            toID = fromID
-        batch_temp.IS_BATCH[message.from_user.id] = False
-        is_private_link = "https://t.me/c/" in message.text
-        is_batch = "https://t.me/b/" in message.text
-        is_public_link = not is_private_link and not is_batch
-        for msgid in range(fromID, toID + 1):
-           
-            if batch_temp.IS_BATCH.get(message.from_user.id):
-                break
-           
-            if is_public_link:
-                username = datas[3]
-                try:
-                    await client.copy_message(
-                        chat_id=message.chat.id,
-                        from_chat_id=username,
-                        message_id=msgid,
-                        reply_to_message_id=message.id
-                    )
-                    await db.add_traffic(message.from_user.id)
-                    await asyncio.sleep(1)
-                    continue
-                except Exception as e:
-                    pass
-            user_data = await db.get_session(message.from_user.id)
-            if user_data is None:
-                await message.reply(
-                    "<b>🔒 Authentication Required</b>\n\n"
-                    "<i>Access to this content requires login.</i>\n"
-                    "<i>Use /login to securely authorize your account.</i>",
-                    parse_mode=enums.ParseMode.HTML
-                )
-                batch_temp.IS_BATCH[message.from_user.id] = True
-                return
+            datas = message.text.split("/")
+            temp = datas[-1].replace("?single", "").split("-")
+            fromID = int(temp[0].strip())
             try:
-                acc = Client(
-                    "saverestricted",
-                    session_string=user_data,
-                    api_hash=API_HASH,
-                    api_id=API_ID,
-                    in_memory=True,
-                    max_concurrent_transmissions=10
-                )
-                await acc.connect()
-            except Exception as e:
-                batch_temp.IS_BATCH[message.from_user.id] = True
-                return await message.reply(f"<b>❌ Authentication Failed</b>\n\n<i>Your session may have expired. Please /logout and /login again.</i>\n<code>{e}</code>", parse_mode=enums.ParseMode.HTML)
-            if is_private_link:
-                chatid = int("-100" + datas[4])
-                await handle_restricted_content(client, acc, message, chatid, msgid)
-            elif is_batch:
-                username = datas[4]
-                await handle_restricted_content(client, acc, message, username, msgid)
-            else:
-                username = datas[3]
-                await handle_restricted_content(client, acc, message, username, msgid)
-            await asyncio.sleep(2)
-        batch_temp.IS_BATCH[message.from_user.id] = True
+                toID = int(temp[1].strip())
+            except:
+                toID = fromID
+            batch_temp.IS_BATCH[message.from_user.id] = False
+            is_private_link = "https://t.me/c/" in message.text
+            is_batch = "https://t.me/b/" in message.text
+            is_public_link = not is_private_link and not is_batch
+            for msgid in range(fromID, toID + 1):
+
+                if batch_temp.IS_BATCH.get(message.from_user.id):
+                    break
+
+                if is_public_link:
+                    username = datas[3]
+                    try:
+                        await client.copy_message(
+                            chat_id=message.chat.id,
+                            from_chat_id=username,
+                            message_id=msgid,
+                            reply_to_message_id=message.id
+                        )
+                        await db.add_traffic(message.from_user.id)
+                        await asyncio.sleep(1)
+                        continue
+                    except Exception:
+                        pass
+                user_data = await db.get_session(message.from_user.id)
+                if user_data is None:
+                    await message.reply(
+                        "<b>🔒 Authentication Required</b>\n\n"
+                        "<i>Access to this content requires login.</i>\n"
+                        "<i>Use /login to securely authorize your account.</i>",
+                        parse_mode=enums.ParseMode.HTML
+                    )
+                    return
+                acc = None
+                try:
+                    acc = Client(
+                        "saverestricted",
+                        session_string=user_data,
+                        api_hash=API_HASH,
+                        api_id=API_ID,
+                        in_memory=True,
+                        max_concurrent_transmissions=10
+                    )
+                    await acc.connect()
+                except Exception as e:
+                    return await message.reply(f"<b>❌ Authentication Failed</b>\n\n<i>Your session may have expired. Please /logout and /login again.</i>\n<code>{e}</code>", parse_mode=enums.ParseMode.HTML)
+                try:
+                    if is_private_link:
+                        chatid = int("-100" + datas[4])
+                        await handle_restricted_content(client, acc, message, chatid, msgid)
+                    elif is_batch:
+                        username = datas[4]
+                        await handle_restricted_content(client, acc, message, username, msgid)
+                    else:
+                        username = datas[3]
+                        await handle_restricted_content(client, acc, message, username, msgid)
+                finally:
+                    if acc:
+                        try:
+                            await acc.disconnect()
+                        except Exception:
+                            pass
+                await asyncio.sleep(2)
+        finally:
+            batch_temp.IS_BATCH[message.from_user.id] = True
 async def handle_restricted_content(client: Client, acc, message: Message, chat_target, msgid):
     try:
         msg: Message = await acc.get_messages(chat_target, msgid)
@@ -468,12 +472,22 @@ async def handle_restricted_content(client: Client, acc, message: Message, chat_
             except:
                 pass
         custom_caption = await db.get_caption(message.from_user.id)
+        bot_info = await client.get_me()
+        file_name = os.path.basename(file)
+        file_size_text = humanbytes(file_size)
+        powered_text = f"\n\n⚜️ Powered by @{bot_info.username}" if bot_info.username else ""
         if custom_caption:
-            final_caption = custom_caption.format(filename=file.split("/")[-1], size=humanbytes(file_size))
+            try:
+                final_caption = custom_caption.format(filename=file_name, size=file_size_text)
+            except Exception:
+                # Fallback: apply only supported placeholders and keep user text as-is.
+                final_caption = custom_caption.replace("{filename}", file_name).replace("{size}", file_size_text)
         else:
-            final_caption = script.CAPTION.format(file_name=file.split("/")[-1])
+            final_caption = script.CAPTION.format(file_name=file_name)
             if msg.caption:
                 final_caption += f"\n\n{msg.caption}"
+        if powered_text and powered_text not in final_caption:
+            final_caption += powered_text
         if msg_type == "Document":
             await client.send_document(message.chat.id, file, thumb=ph_path, caption=final_caption, progress=progress, progress_args=[message, "up"])
         elif msg_type == "Video":
@@ -508,7 +522,7 @@ async def button_callbacks(client: Client, callback_query: CallbackQuery):
         await settings_panel(client, callback_query)
     elif data == "buy_premium":
         buttons = [
-            [InlineKeyboardButton("📸 Send Payment Proof", url="https://t.me/DmOwner")],
+            [InlineKeyboardButton("📞 Contact To Buy", url="https://t.me/priyans17")],
             [InlineKeyboardButton("⬅️ Back to Home", callback_data="start_btn")]
         ]
         await client.edit_message_media(
@@ -516,7 +530,7 @@ async def button_callbacks(client: Client, callback_query: CallbackQuery):
             message_id=message.id,
             media=InputMediaPhoto(
                 media=SUBSCRIPTION,
-                caption=script.PREMIUM_TEXT.format(callback_query.from_user.mention, UPI_ID, QR_CODE)
+                caption=script.PREMIUM_TEXT.format(UPI_ID)
             ),
             reply_markup=InlineKeyboardMarkup(buttons)
         )
