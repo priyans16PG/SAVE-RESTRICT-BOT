@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: lockedsaver-bot
+    name: SAVE-RESTRICT-BOT
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
