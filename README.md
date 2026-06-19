@@ -1,4 +1,4 @@
-# 🚀 lockedsaver - restricted saver free
+# 🚀 lockedsaver - restricted saver free (vibe coded)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&style=for-the-badge">
